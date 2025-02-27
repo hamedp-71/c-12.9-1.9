@@ -1,0 +1,333 @@
+mixed-port: 7890
+ipv6: true
+allow-lan: true
+mode: rule
+log-level: warning
+disable-keep-alive: false
+keep-alive-idle: 30
+keep-alive-interval: 30
+unified-delay: false
+geo-auto-update: true
+geo-update-interval: 168
+external-controller: '127.0.0.1:9090'
+external-ui-url: 'https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip'
+external-ui: ui
+external-controller-cors:
+  allow-origins: ['*']
+  allow-private-network: true
+profile:
+  store-selected: true
+  store-fake-ip: true
+hosts: {}
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  respect-rules: true
+  use-hosts: true
+  use-system-hosts: false
+  nameserver:
+    - '8.8.8.8'
+    - '2001:4860:4860::8888'
+    - '8.8.4.4'
+    - '2001:4860:4860::8844'
+  proxy-server-nameserver:
+    - '8.8.8.8'
+    - '2001:4860:4860::8888'
+    - '8.8.4.4'
+    - '2001:4860:4860::8844'
+tun:
+  enable: true
+  stack: mixed
+  auto-route: true
+  strict-route: true
+  auto-detect-interface: true
+  dns-hijack: 
+    - 'any:53'
+  mtu: 1280
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports: [80, 8080, 8880, 2052, 2082, 2086, 2095]
+    TLS:
+      ports: [443, 8443, 2053, 2083, 2087, 2096]
+
+proxies:
+
+  - name: "🇮🇷 hamedp71-1"
+    type: wireguard
+    ip: 172.16.0.2/32
+    private-key: "QGAWKwwBJ2obTIUlIKkju2J5HIXZYJOcpOZSjEAg1nI="
+    server: 188.114.97.67
+    port: 942
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    reserved: [104, 158, 39]
+    udp: true
+    mtu: 1280
+    dialer-proxy: ""
+    amnezia-wg-option:
+      jc: 4
+      jmin: 40
+      jmax: 250
+      s1: 0
+      s2: 0
+      h1: 1
+      h2: 2
+      h4: 3
+      h3: 4
+
+  - name: "🇮🇷 hamedp71-2"
+    type: wireguard
+    ip: 172.16.0.2/32
+    private-key: "IE/s0zaqQpK6XVYBzZtz0SHMhumKX9dQe2xDCB0dMFc="
+    server: 188.114.99.48
+    port: 7281
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    reserved: [234, 22, 171]
+    udp: true
+    mtu: 1280
+    dialer-proxy: ""
+    amnezia-wg-option:
+      jc: 4
+      jmin: 40
+      jmax: 250
+      s1: 0
+      s2: 0
+      h1: 1
+      h2: 2
+      h4: 3
+      h3: 4
+
+  - name: "🇮🇷 hamedp71-3"
+    type: wireguard
+    ip: 172.16.0.2/32
+    private-key: "IBZHXF1Zbm6c57O0koC6mr+JxaGW7EPoF+z/fRbKHX8="
+    server: 188.114.96.224
+    port: 2371
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    reserved: [111, 20, 196]
+    udp: true
+    mtu: 1280
+    dialer-proxy: ""
+    amnezia-wg-option:
+      jc: 4
+      jmin: 40
+      jmax: 250
+      s1: 0
+      s2: 0
+      h1: 1
+      h2: 2
+      h4: 3
+      h3: 4
+
+  - name: "🇮🇷 Warp - IPv4"
+    type: wireguard
+    ip: 172.16.0.3
+    ipv6: 2001:db8:1::1
+    private-key: "pQ15jrTUSHWaZUZrR7VKob9PjbrStxUQJ/akkKkplsU="
+    server: 188.114.96.172
+    port: 1180
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    reserved: [209,98,59]
+    udp: true
+    mtu: 1280
+    dialer-proxy: ""
+    amnezia-wg-option:
+      jc: 4
+      jmin: 40
+      jmax: 250
+      s1: 0
+      s2: 0
+      h1: 1
+      h2: 2
+      h4: 3
+      h3: 4
+
+  - name: "🇩🇪 Warp - IPv4"
+    type: wireguard
+    ip: 172.16.0.3
+    ipv6: 2001:db8:1::1
+    private-key: "U6ON8cy8qUknlIT2DGUXUlS0BnO9FhEl+UY7AfMlJ5I="
+    server: 188.114.98.105
+    port: 1010
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    reserved: "AAAA"
+    udp: true
+    mtu: 1280
+    dialer-proxy: "🇮🇷 Warp - IPv4"
+
+  - name: "🇮🇷ipv6 hamedp71-1"
+    type: wireguard
+    ip: 172.16.0.2/32
+    ipv6: 2001:db8:1::1
+    private-key: "QGAWKwwBJ2obTIUlIKkju2J5HIXZYJOcpOZSjEAg1nI="
+    server: "[2606:4700:d0::e5c2:dcf4:f5a:693d]"
+    port: 1002
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    reserved: [104, 158, 39]
+    udp: true
+    mtu: 1280
+    dialer-proxy: ""
+    amnezia-wg-option:
+      jc: 4
+      jmin: 40
+      jmax: 250
+      s1: 0
+      s2: 0
+      h1: 1
+      h2: 2
+      h4: 3
+      h3: 4
+
+  - name: "🇮🇷ipv6 hamedp71-2"
+    type: wireguard
+    ip: 172.16.0.2/32
+    ipv6: 2001:db8:1::1
+    private-key: "IE/s0zaqQpK6XVYBzZtz0SHMhumKX9dQe2xDCB0dMFc="
+    server: "[2606:4700:d0::1458:32a1:f454:4a7b]"
+    port: 942
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    reserved: [234, 22, 171]
+    udp: true
+    mtu: 1280
+    dialer-proxy: ""
+    amnezia-wg-option:
+      jc: 4
+      jmin: 40
+      jmax: 250
+      s1: 0
+      s2: 0
+      h1: 1
+      h2: 2
+      h4: 3
+      h3: 4
+
+  - name: "🇮🇷ipv6 hamedp71-3"
+    type: wireguard
+    ip: 172.16.0.2/32
+    ipv6: 2001:db8:1::1
+    private-key: "IBZHXF1Zbm6c57O0koC6mr+JxaGW7EPoF+z/fRbKHX8="
+    server: "[2606:4700:d0::1e55:5514:c50e:347d]"
+    port: 1010
+    public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    reserved: [111, 20, 196]
+    udp: true
+    mtu: 1280
+    dialer-proxy: ""
+    amnezia-wg-option:
+      jc: 4
+      jmin: 40
+      jmax: 250
+      s1: 0
+      s2: 0
+      h1: 1
+      h2: 2
+      h4: 3
+      h3: 4
+
+proxy-groups:
+  - name: "✅ انتخاب دستی"
+    type: select
+    proxies:
+      - "🚀 انتخاب خودکار (بهترین)"
+      - "🌍 Global"
+      - "🇮🇷 hamedp71-1"
+      - "🇮🇷 hamedp71-2"
+      - "🇮🇷 hamedp71-3"
+      - "🇮🇷 Warp - IPv4"
+      - "🇩🇪 Warp - IPv4"
+      - "🇮🇷ipv6 hamedp71-1"
+      - "🇮🇷ipv6 hamedp71-2"
+      - "🇮🇷ipv6 hamedp71-3"
+
+  - name: "🚀 انتخاب خودکار (بهترین)"
+    type: url-test
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 100
+    proxies:
+      - "🇮🇷 hamedp71-1"
+      - "🇮🇷 hamedp71-2"
+      - "🇮🇷 hamedp71-3"
+      - "🇮🇷 Warp - IPv4"
+      - "🇩🇪 Warp - IPv4"
+      - "🇮🇷ipv6 hamedp71-1"
+      - "🇮🇷ipv6 hamedp71-2"
+      - "🇮🇷ipv6 hamedp71-3"
+
+  - name: "🌍 Global"
+    type: select
+    proxies:
+      - "🇩🇪 Warp - IPv4"
+      - "🇮🇷 Warp - IPv4"
+
+rule-providers:
+  ir:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/ir.txt"
+    path: "./ruleset/ir.txt"
+    interval: 86400
+  ir-cidr:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/ircidr.txt"
+    path: "./ruleset/ir-cidr.txt"
+    interval: 86400
+  malware:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/malware.txt"
+    path: "./ruleset/malware.txt"
+    interval: 86400
+  phishing:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/phishing.txt"
+    path: "./ruleset/phishing.txt"
+    interval: 86400
+  cryptominers:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/cryptominers.txt"
+    path: "./ruleset/cryptominers.txt"
+    interval: 86400
+  ads:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/ads.txt"
+    path: "./ruleset/ads.txt"
+    interval: 86400
+
+rules:
+  - RULE-SET,ir,DIRECT
+  - RULE-SET,ir-cidr,DIRECT
+  - RULE-SET,malware,REJECT
+  - RULE-SET,phishing,REJECT
+  - RULE-SET,cryptominers,REJECT
+  - RULE-SET,ads,REJECT
+  - MATCH,🚀 انتخاب خودکار (بهترین)
+
+ntp:
+  enable: true
+  server: "time.apple.com"
+  port: 123
+  interval: 30
